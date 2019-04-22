@@ -33,7 +33,7 @@ It will be a simple bucket list application where users can register, sign in an
 Container A : Flask Application
 Container B : MySQL Server
 
-After the intial setup that is cloning this repo in your machine, run ```app.py``` to fire up the server and check if everything works fine.
+After the intial setup that is cloning this repo in your machine, run ```app1.py``` to fire up the server and check if everything works fine.
 Application is accessed on ```localhost:5002```.
 
 For now you manually need to create the database, tables and Stored procedures. I'll automate that as soon as possible.
