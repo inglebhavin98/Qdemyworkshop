@@ -1,37 +1,46 @@
 # Qdemyworkshop
-Created a web application using flask and mysql. Dockerized so that it can be modified to deploy any web content and is easily scalable.
+Q-Demy workshop organised by Quantiphi at Sardar Patel Institute of Technology on Cloud Technologies.
 
-## Introduction  
-This directory contains a flask application that POSTs data in json format on the localhost, and a html file to display it. 
-Apache server handles displaying the json data on the webpage.
-Compose creates two containers :
+## Introduction
+Students were assigned the task to create an application and dockerize it in a way where two or more containers are created and they communicate with each other when run.
 
+This repository is divided into two parts:
+
+## 1. Simple json Parser
+
+Created a flask application that POSTs data in json format on the localhost, and a web page is used to display it.
+Apache server handles the task of running the web-page.
+This application was divided in two parts :
 * Container A : Flask Application
 * Container B : apache-php server
 
-##  Installation (Ubuntu)
-##  Usage
+###  Installation (Ubuntu)
 
-### Steps to run :
-* ```git-clone``` the repository to your local machine / any host OS in a VM running on the cloud. 
-* On a terminal type ```docker-compose up``` to get the containers attached and running.
-* Use the ```-d``` option for running in detached mode so that you can see both the containers created with ```docker ps``` command.
+1. Git clone this repository using ```git clone <repository_url>```.
+2. Open terminal and navigate to ```docker``` directory.
+3. Install ```docker``` from [here]().
+4. Install ```docker-compose``` from [here]().
+5. Check if they are running properly.
+6. Run ```sudo docker-compose up -d``` to run the containers in detached mode.
+7. Check if they are running by : ```docker ps```.
 
-### From Docker Hub
-* pull the containers from my docker hub [repository here](https://cloud.docker.com/u/inglebhavin98).
-* To pull server type : ```docker pull inglebhavin98/server```  
-* To pull client type : ```docker pull inglebhavin98/client``` 
-Run both the containers and check ```localhost:4004``` for server POSTs and ```localhost:4005``` for the webpage.
-This demonstrates linking of two services using containers.
+###  Usage
 
-## flask-app
+1.  Go to ```http://localhost:4004```.
+2.  This is the raw json string as received by the browser.
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/2cont-2.png)
+3.  This is the parsed json output on the web page.
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/2cont-3.png)
+4. These are the two containers that we created. (highlighted in the last lines of output)
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/2cont-5.png)
 
-This directory contains a web application created using flask and mysql. Dockerized so that it can be modified to deploy any web content and is easily scalable.
+## 2. Blogging Application 
 
-It will be a simple bucket list application where users can register, sign in and create their bucket list. We'll be using Flask, a Python web application framework, to create our application, with MySQL as the back end.
+Created a web application using flask and mysql. Dockerized so that it can be modified to deploy any web content and is easily scalable.
+
+It will be a simple bucket list application where users can register, sign in and create their bucket list, using Flask to create our application, with MySQL as the back end.
 
 > Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions.
-
 
 Container A : Flask Application
 Container B : MySQL Server
@@ -39,8 +48,33 @@ Container B : MySQL Server
 After the intial setup that is cloning this repo in your machine, run ```app1.py``` to fire up the server and check if everything works fine.
 Application is accessed on ```localhost:5002```.
 
-For now you manually need to create the database, tables and Stored procedures. I'll automate that as soon as possible.
 
+
+##  Installation (Ubuntu)
+1. Git clone this repository using ```git clone <repository_url>```.
+2. Open terminal and navigate to ```flask-app``` directory.
+3. Install ```docker``` from [here]().
+4. Install ```docker-compose``` from [here]().
+5. Check if they are running properly.
+6. Run ```sudo docker-compose up -d``` to run the containers in detached mode.
+7. Check if they are running by : ```docker ps```.
+
+##  Usage
+1.  Go to ```http://localhost:5002```.
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/1cont-1.png)
+2.  Click on signup, enter details and submit.
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/1cont-4.png)
+Database is updated!!
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/1cont-5.png)
+3.  From the main page, click on login and enter credentials.
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/login.png)
+4.  This is the home page where posts can be viewed.
+![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/home.png)
+5.  This is the ```AddWish``` page.
+ ![alt text](https://github.com/inglebhavin98/Qdemyworkshop/blob/master/images/addwish.png)
+ 
+ 
+For now you manually need to create the database, tables and Stored procedures. I'll automate that as soon as possible.
 
 ##  Setup MySQL 
 First, create a database called BucketList. From the command line: 
@@ -190,3 +224,4 @@ END$$
 
 
 After database setup is complete you can check by creating a user and logging in ..  create some posts on the wishlist page and all these changes will be reflected in the database.
+
