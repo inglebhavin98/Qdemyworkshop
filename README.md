@@ -1,14 +1,16 @@
 # Qdemyworkshop
 Created a web application using flask and mysql. Dockerized so that it can be modified to deploy any web content and is easily scalable.
 
-## docker 
-
+## Introduction  
 This directory contains a flask application that POSTs data in json format on the localhost, and a html file to display it. 
 Apache server handles displaying the json data on the webpage.
 Compose creates two containers :
 
 * Container A : Flask Application
 * Container B : apache-php server
+
+##  Installation (Ubuntu)
+##  Usage
 
 ### Steps to run :
 * ```git-clone``` the repository to your local machine / any host OS in a VM running on the cloud. 
